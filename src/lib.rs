@@ -1,17 +1,31 @@
-//! Framework agnostic pagination crate
+//! A framework agnostic pagination crate, that is especially suited for databases, collections and web pages.
 //!
 //! ### Example
 //!
+//! To iterate over each page:
 //! ```rust
 //! use paginate::Pages;
 //!
 //! fn print_pages() {
 //!     let total_items = 100usize;
-//      let items_per_page = 5usize;
-//      let pages = Pages::new(total_items, items_per_page);
-//      for page in pages.into_iter() {
-//          println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
-//      }
+//!      let items_per_page = 5usize;
+//!      let pages = Pages::new(total_items, items_per_page);
+//!      for page in pages.into_iter() {
+//!          println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
+//!      }
+//! }
+//! ```
+//!
+//! To get the pagination of a specific offset:
+//! ```rust
+//! use paginate::Pages;
+//!
+//! fn main() {
+//!     let total_items = 35;
+//!     let items_per_page = 5;
+//!     let pages = Pages::new(total_items, items_per_page);
+//!     let page = pages.with_offset(3);
+//!     println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
 //! }
 //! ```
 
@@ -19,31 +33,23 @@ use std::cmp::{max, min};
 
 ///
 /// Defines the pages to facilitate pagination.
-///
-/// ### Example
-///
-/// ```rust
-/// use paginate::Pages;
-/// let total_items = 100;
-/// let items_per_page = 5;
-/// let pages = Pages::new(total_items, items_per_page);
-/// for page in pages.into_iter() {
-///     // let items: Vec<Foo> = sql.query("SELECT * FROM table LIMIT ?,?", (page.start, page.length));
-///     // let items: Vec<Foo> = sql.query("SELECT * FROM table WHERE id >= ? AND id <= ?", (page.start, page.end));
-///     println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
-/// }
-/// ```
 #[derive(Debug, PartialEq)]
 pub struct Pages {
-    /// Current page offset
+    /// Current page offset.
     offset: usize,
-    /// Total number of items
+    /// Total number of items.
     length: usize,
-    /// Total number of pages
+    /// Total number of pages.
     limit: usize,
 }
 
 impl Pages {
+    /// Defines a new pagination.
+    ///
+    /// ### Arguments
+    ///
+    /// * `length` - the total number of items to paginate.
+    /// * `limit` - the maximum number of items that can exist on a single page.
     pub fn new(length: usize, limit: usize) -> Pages {
         Pages {
             offset: 0,
@@ -52,6 +58,11 @@ impl Pages {
         }
     }
 
+    /// Gets a specific page.
+    ///
+    /// ### Arguments
+    ///
+    /// * `offset` - the offset of the page you want to retrieve.
     pub fn with_offset(&self, offset: usize) -> Page {
         let mut page = Page::default();
         page.offset = offset;
@@ -66,6 +77,21 @@ impl Pages {
             page.end -= 1;
         };
         page
+    }
+
+    /// Gets the current page offset.
+    pub fn offset(&self) -> usize {
+        self.offset
+    }
+
+    /// Gets the total number of pages.
+    pub fn length(&self) -> usize {
+        self.length
+    }
+
+    /// Gets the maximum number of items per page.
+    pub fn limit(&self) -> usize {
+        self.limit
     }
 }
 
@@ -82,26 +108,28 @@ impl Iterator for Pages {
     }
 }
 
-/// Defines the properties of a page
+/// Defines the properties of a page.
 #[derive(Debug, PartialEq)]
 pub struct Page {
-    /// The current page offset
+    /// The current page offset.
     pub offset: usize,
-    /// number of items that exist on this page
+    /// The total number of items that exist on this page offset.
     pub length: usize,
-    /// the index of the first item on this page
+    /// The index of the first item on this page.
     pub start: usize,
-    /// the index of the last item on this page
+    /// The index of the last item on this page.
     pub end: usize,
 }
 
 impl Page {
-    fn is_empty(&self) -> bool {
+    /// When a page does not contain any items it is considered to be empty.
+    pub fn is_empty(&self) -> bool {
         self.length == 0
     }
 }
 
 impl Default for Page {
+    /// Creates an empty page with no items.
     fn default() -> Self {
         Page {
             offset: 0usize,
