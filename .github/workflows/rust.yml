@@ -1,0 +1,20 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --verbose
+    - name: rust-clippy-check
+      uses: actions-rs/clippy-check@v1.0.5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        args: --all-targets --all-features -- -D warnings
+    - name: Run tests
+      run: cargo test --verbose
