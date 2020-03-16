@@ -238,4 +238,23 @@ mod tests {
         filled_page.length = 1;
         assert!(!filled_page.is_empty());
     }
+
+    #[test]
+    fn offset() {
+        let pages = Pages::new(100, 5);
+        assert_eq!(0, pages.offset());
+    }
+
+    #[test]
+    fn length() {
+        let pages = Pages::new(100, 5);
+        assert_eq!(100, pages.length());
+    }
+
+
+    #[test]
+    fn limit() {
+        let pages = Pages::new(100, 5);
+        assert_eq!(5, pages.limit());
+    }
 }
