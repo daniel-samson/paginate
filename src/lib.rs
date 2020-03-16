@@ -20,7 +20,7 @@
 //! ```rust
 //! use paginate::Pages;
 //!
-//! fn main() {
+//! fn print_test() {
 //!     let total_items = 35;
 //!     let items_per_page = 5;
 //!     let pages = Pages::new(total_items, items_per_page);
