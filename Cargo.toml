@@ -14,7 +14,7 @@ categories = ["data-structures", "web-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [badges]
-codecov = { repository = "https://github.com/daniel-samson/paginate", branch = "master", service = "github" }
+codecov = { repository = "daniel-samson/paginate", branch = "master", service = "github" }
 maintenance = { status = "passively-maintained" }
 
 [lib]
