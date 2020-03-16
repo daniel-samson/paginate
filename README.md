@@ -6,7 +6,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 ### Example
 
 
-To iterate over the pages:
+To iterate over each page:
 
 ```rust
 use paginate::Pages;
