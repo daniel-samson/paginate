@@ -1,6 +1,7 @@
 A framework agnostic pagination crate, that is especially suited for databases, collections and web pages.
 
 ![Rust](https://github.com/daniel-samson/paginate/workflows/Rust/badge.svg?branch=master)
+![Docs](https://docs.rs/paginate/badge.svg?version=1.0.0)
 
 ### Example
 
