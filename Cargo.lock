@@ -2,4 +2,4 @@
 # It is not intended for manual editing.
 [[package]]
 name = "paginate"
-version = "1.0.0"
+version = "1.0.1"
