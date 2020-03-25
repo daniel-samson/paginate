@@ -2,7 +2,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 
 ![crates.io](https://img.shields.io/crates/v/paginate.svg)
 ![Rust](https://github.com/daniel-samson/paginate/workflows/Rust/badge.svg?branch=master)
-![Docs](https://docs.rs/paginate/badge.svg?version=1.0.0)
+![Docs](https://docs.rs/paginate/badge.svg?version=1.0.1)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 
 ### Example
