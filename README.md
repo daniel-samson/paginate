@@ -4,7 +4,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 [![Rust](https://github.com/daniel-samson/paginate/workflows/Rust/badge.svg?branch=master)](https://github.com/daniel-samson/paginate/actions)
 [![Docs](https://docs.rs/paginate/badge.svg?version=1.0.1)](https://docs.rs/paginate/1.0.1/paginate/)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
-
+[![book](https://img.shields.io/badge/Book-v1.0.1-blue)](https://daniel-samson.github.io/paginate-docs/)
 ### Example
 
 
