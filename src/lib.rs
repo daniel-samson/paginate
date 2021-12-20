@@ -84,7 +84,7 @@ impl Pages {
         self.offset
     }
 
-    /// Gets the total number of pages.
+    /// Gets the total number of items.
     pub fn length(&self) -> usize {
         self.length
     }
