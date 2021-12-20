@@ -33,7 +33,7 @@ use std::cmp::{max, min};
 
 ///
 /// Defines the pages to facilitate pagination.
-#[derive(Debug, PartialEq)]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Pages {
     /// Current page offset.
     offset: usize,
@@ -109,7 +109,7 @@ impl Iterator for Pages {
 }
 
 /// Defines the properties of a page.
-#[derive(Debug, PartialEq)]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Page {
     /// The current page offset.
     pub offset: usize,
