@@ -108,6 +108,15 @@ impl Iterator for Pages {
     }
 }
 
+impl IntoIterator for &Pages {
+    type Item = Page;
+    type IntoIter = Pages;
+
+    fn into_iter(self) -> Pages {
+        self.clone()
+    }
+}
+
 /// Defines the properties of a page.
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Page {
@@ -225,6 +234,16 @@ mod tests {
         let items_per_page = 1usize;
         let pages = Pages::new(total_items, items_per_page);
         for p in pages.into_iter() {
+            assert_eq!(p, Page { offset: 0, length: 1, start: 0, end: 0 });
+        }
+    }
+
+    #[test]
+    fn iterator_ref() {
+        let total_items = 1usize;
+        let items_per_page = 1usize;
+        let pages = Pages::new(total_items, items_per_page);
+        for p in &pages {
             assert_eq!(p, Page { offset: 0, length: 1, start: 0, end: 0 });
         }
     }
