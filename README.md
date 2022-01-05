@@ -1,4 +1,4 @@
-A framework agnostic pagination crate, that is especially suited for databases, collections and web pages.
+A framework agnostic pagination crate, that is especially suited for databases, slices and collections.
 
 [![crates.io](https://img.shields.io/crates/v/paginate.svg)](https://crates.io/crates/paginate)
 [![Rust](https://github.com/daniel-samson/paginate/actions/workflows/rust.yml/badge.svg?branch=master)](https://github.com/daniel-samson/paginate/actions/workflows/rust.yml)
