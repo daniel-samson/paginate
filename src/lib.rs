@@ -258,8 +258,10 @@ mod tests {
         let empty_page = Page::default();
         assert!(empty_page.is_empty());
 
-        let mut filled_page = Page::default();
-        filled_page.length = 1;
+        let filled_page = Page {
+            length: 1,
+            ..Page::default()
+        };
         assert!(!filled_page.is_empty());
     }
 
