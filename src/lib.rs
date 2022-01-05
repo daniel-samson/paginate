@@ -84,7 +84,7 @@ impl Pages {
         self.offset
     }
 
-    /// Gets the total number of pages.
+    /// Gets the total number of items.
     pub fn length(&self) -> usize {
         self.length
     }
@@ -92,6 +92,11 @@ impl Pages {
     /// Gets the maximum number of items per page.
     pub fn limit(&self) -> usize {
         self.limit
+    }
+
+    /// Gets the total number of pages.
+    pub fn page_count(&self) -> usize {
+        (self.length + self.limit - 1) / self.limit
     }
 }
 
@@ -270,10 +275,21 @@ mod tests {
         assert_eq!(100, pages.length());
     }
 
-
     #[test]
     fn limit() {
         let pages = Pages::new(100, 5);
         assert_eq!(5, pages.limit());
+    }
+
+    #[test]
+    fn page_count() {
+        let pages = Pages::new(100, 5);
+        assert_eq!(20, pages.page_count());
+
+        let pages = Pages::new(101, 5);
+        assert_eq!(21, pages.page_count());
+
+        let pages = Pages::new(99, 5);
+        assert_eq!(20, pages.page_count());
     }
 }
