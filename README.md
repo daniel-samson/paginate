@@ -36,3 +36,8 @@ fn main() {
 }
 ```
 
+## Getting help
+
+- [Book](https://daniel-samson.github.io/paginate-docs/)
+- [API Documentation](https://docs.rs/paginate/latest/paginate/)
+
