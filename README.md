@@ -2,7 +2,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 
 [![crates.io](https://img.shields.io/crates/v/paginate.svg)](https://crates.io/crates/paginate)
 [![Rust](https://github.com/daniel-samson/paginate/actions/workflows/rust.yml/badge.svg?branch=master)](https://github.com/daniel-samson/paginate/actions/workflows/rust.yml)
-[![Docs](https://docs.rs/paginate/badge.svg?version=1.0.1)](https://docs.rs/paginate/1.0.1/paginate/)
+[![Docs](https://docs.rs/paginate/badge.svg?version=1.1.0)](https://docs.rs/paginate/)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 [![book](https://img.shields.io/badge/Book-v1.1.0-blue)](https://daniel-samson.github.io/paginate-docs/)
 ### Example
