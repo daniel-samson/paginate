@@ -57,7 +57,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: push tags
-      run: git push — follow-tags
+      run: git push —follow-tags
     - name: publish
       run: cargo publish --token ${CARGO_REGISTRY_TOKEN}
       env:
