@@ -47,11 +47,9 @@ jobs:
       run: cargo install cargo-bump
     - name: set up git
       run: |
-          git config --global user.name 'Your Name'
+          git config --global user.name 'Github Actions'
           git config --global user.email '12231216+daniel-samson@users.noreply.github.com '
           git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: bump version
