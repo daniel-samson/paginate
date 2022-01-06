@@ -22,6 +22,7 @@ fn main() {
     let total_items = 100;
     let items_per_page = 5;
     let pages = Pages::new(total_items, items_per_page);
+    println!("total pages: {}", pages.page_count());
     for page in pages.into_iter() {
         println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
     }
@@ -37,6 +38,7 @@ fn main() {
     let items_per_page = 5;
     let pages = Pages::new(total_items, items_per_page);
     let page = pages.with_offset(3);
+    println!("total pages: {}", pages.page_count());
     println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
 }
 ```
