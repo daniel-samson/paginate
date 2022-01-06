@@ -53,7 +53,7 @@ jobs:
           target/
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - name: install cargo clean
-      run: cargo clean
+      run: cargo clean && git diff-index --quiet HEAD -- || echo "untracked";
     - name: install cargo release --allow-dirty
       run: if [ ! -f ~/.cargo/bin/cargo-release ]; then cargo install cargo-release; fi;
     - name: cargo release
