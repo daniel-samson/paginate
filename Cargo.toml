@@ -1,6 +1,6 @@
 [package]
 name = "paginate"
-version = "1.1.5"
+version = "1.1.6"
 authors = ["Daniel Samson"]
 edition = "2018"
 description = "A framework agnostic pagination crate, that is especially suited for databases, slices and collections. Paginate calculates the range of pages indexes, making it ideal for accessing slices, chunking data and querying databases."
