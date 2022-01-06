@@ -51,8 +51,8 @@ jobs:
           git status --porcelain
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: install version bump
-      run: cargo install cargo install cargo-release
+    - name: install cargo release
+      run: cargo install cargo-release
     - name: cargo release
       run: cargo release
       env:
