@@ -55,4 +55,6 @@ jobs:
     - name: install cargo release
       run: if [ ! -f ~/.cargo/bin/cargo-release ]; then cargo install cargo-release; fi;
     - name: cargo release
-      run: cargo release patch --execute --no-confirm
+      run: cargo release patch --execute --no-confirm --token $CARGO_REGISTRY_TOKEN
+      env:
+       CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
