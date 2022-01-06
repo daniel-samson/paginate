@@ -52,9 +52,7 @@ jobs:
           ~/.cargo/git/db/
           target/
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - name: git status
-      run: git status --porcelain
-    - name: install cargo release --allow-dirty
+    - name: install cargo release
       run: if [ ! -f ~/.cargo/bin/cargo-release ]; then cargo install cargo-release; fi;
     - name: cargo release
       run: cargo release
