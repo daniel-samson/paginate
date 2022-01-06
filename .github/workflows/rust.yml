@@ -47,7 +47,9 @@ jobs:
       run: cargo install cargo-bump
     - name: bump version
       run: cargo bump -g
-    - uses: katyo/publish-crates@v1
-      with:
-          registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-          dry-run: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: publish
+      run: cargo publish --token ${CARGO_REGISTRY_TOKEN}
+      env:
+        CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
