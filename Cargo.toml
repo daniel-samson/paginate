@@ -1,6 +1,6 @@
 [package]
 name = "paginate"
-version = "1.1.0"
+version = "1.1.1"
 authors = ["Daniel Samson"]
 edition = "2018"
 description = "A framework agnostic pagination crate, that is especially suited for databases, collections and web pages."
