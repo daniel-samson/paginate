@@ -161,7 +161,15 @@ mod tests {
     #[test]
     fn default_page() {
         let page = Page::default();
-        assert_eq!(page, Page { offset: 0, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            page,
+            Page {
+                offset: 0,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -169,8 +177,24 @@ mod tests {
         let total_items = 0usize;
         let items_per_page = 5usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 0, start: 0, end: 0 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -178,8 +202,24 @@ mod tests {
         let total_items = 5usize;
         let items_per_page = 0usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 0, start: 0, end: 0 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -187,9 +227,33 @@ mod tests {
         let total_items = 5usize;
         let items_per_page = 5usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 5, start: 0, end: 4 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 0, start: 0, end: 0 });
-        assert_eq!(pages.with_offset(2), Page { offset: 2, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 5,
+                start: 0,
+                end: 4
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
+        assert_eq!(
+            pages.with_offset(2),
+            Page {
+                offset: 2,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -197,8 +261,24 @@ mod tests {
         let total_items = 1usize;
         let items_per_page = 5usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 1, start: 0, end: 0 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 1,
+                start: 0,
+                end: 0
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -206,10 +286,42 @@ mod tests {
         let total_items = 5usize;
         let items_per_page = 2usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 2, start: 0, end: 1 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 2, start: 2, end: 3 });
-        assert_eq!(pages.with_offset(2), Page { offset: 2, length: 1, start: 4, end: 4 });
-        assert_eq!(pages.with_offset(3), Page { offset: 3, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 2,
+                start: 0,
+                end: 1
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 2,
+                start: 2,
+                end: 3
+            }
+        );
+        assert_eq!(
+            pages.with_offset(2),
+            Page {
+                offset: 2,
+                length: 1,
+                start: 4,
+                end: 4
+            }
+        );
+        assert_eq!(
+            pages.with_offset(3),
+            Page {
+                offset: 3,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -217,10 +329,42 @@ mod tests {
         let total_items = 6usize;
         let items_per_page = 2usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 2, start: 0, end: 1 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 2, start: 2, end: 3 });
-        assert_eq!(pages.with_offset(2), Page { offset: 2, length: 2, start: 4, end: 5 });
-        assert_eq!(pages.with_offset(3), Page { offset: 3, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 2,
+                start: 0,
+                end: 1
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 2,
+                start: 2,
+                end: 3
+            }
+        );
+        assert_eq!(
+            pages.with_offset(2),
+            Page {
+                offset: 2,
+                length: 2,
+                start: 4,
+                end: 5
+            }
+        );
+        assert_eq!(
+            pages.with_offset(3),
+            Page {
+                offset: 3,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -228,9 +372,33 @@ mod tests {
         let total_items = 5usize;
         let items_per_page = 3usize;
         let pages = Pages::new(total_items, items_per_page);
-        assert_eq!(pages.with_offset(0), Page { offset: 0, length: 3, start: 0, end: 2 });
-        assert_eq!(pages.with_offset(1), Page { offset: 1, length: 2, start: 3, end: 4 });
-        assert_eq!(pages.with_offset(2), Page { offset: 2, length: 0, start: 0, end: 0 });
+        assert_eq!(
+            pages.with_offset(0),
+            Page {
+                offset: 0,
+                length: 3,
+                start: 0,
+                end: 2
+            }
+        );
+        assert_eq!(
+            pages.with_offset(1),
+            Page {
+                offset: 1,
+                length: 2,
+                start: 3,
+                end: 4
+            }
+        );
+        assert_eq!(
+            pages.with_offset(2),
+            Page {
+                offset: 2,
+                length: 0,
+                start: 0,
+                end: 0
+            }
+        );
     }
 
     #[test]
@@ -239,7 +407,15 @@ mod tests {
         let items_per_page = 1usize;
         let pages = Pages::new(total_items, items_per_page);
         for p in pages.into_iter() {
-            assert_eq!(p, Page { offset: 0, length: 1, start: 0, end: 0 });
+            assert_eq!(
+                p,
+                Page {
+                    offset: 0,
+                    length: 1,
+                    start: 0,
+                    end: 0
+                }
+            );
         }
     }
 
@@ -249,7 +425,15 @@ mod tests {
         let items_per_page = 1usize;
         let pages = Pages::new(total_items, items_per_page);
         for p in &pages {
-            assert_eq!(p, Page { offset: 0, length: 1, start: 0, end: 0 });
+            assert_eq!(
+                p,
+                Page {
+                    offset: 0,
+                    length: 1,
+                    start: 0,
+                    end: 0
+                }
+            );
         }
     }
 
