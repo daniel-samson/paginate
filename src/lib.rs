@@ -1,4 +1,4 @@
-//! A framework agnostic pagination crate, that is especially suited for databases, collections and web pages.
+//! A framework agnostic pagination crate, that is especially suited for databases, slices and collections. Paginate calculates the range of pages indexes, making it ideal for accessing slices, chunking data and querying databases.
 //!
 //! ### Example
 //!
@@ -10,6 +10,7 @@
 //!     let total_items = 100usize;
 //!      let items_per_page = 5usize;
 //!      let pages = Pages::new(total_items, items_per_page);
+//!      println!("total pages: {}", pages.page_count());
 //!      for page in pages.into_iter() {
 //!          println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
 //!      }
@@ -25,6 +26,7 @@
 //!     let items_per_page = 5;
 //!     let pages = Pages::new(total_items, items_per_page);
 //!     let page = pages.with_offset(3);
+//!     println!("total pages: {}", pages.page_count());
 //!     println!("offset: {}, total: {}, start: {}, end: {}", page.offset, page.length, page.start, page.end);
 //! }
 //! ```
