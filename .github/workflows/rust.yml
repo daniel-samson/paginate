@@ -55,4 +55,4 @@ jobs:
     - name: install cargo release
       run: if [ ! -f ~/.cargo/bin/cargo-release ]; then cargo install cargo-release; fi;
     - name: cargo release
-      run: cargo release
+      run: cargo release patch
