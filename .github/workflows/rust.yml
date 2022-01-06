@@ -43,14 +43,15 @@ jobs:
       with:
           toolchain: stable
           override: true
-    - name: set up git
-      run: |
-          git config --global user.name 'Github Actions'
-          git config --global user.email '12231216+daniel-samson@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
-          git status --porcelain
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - name: install cargo release
       run: cargo install cargo-release
     - name: cargo release
