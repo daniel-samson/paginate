@@ -1,4 +1,4 @@
-A framework agnostic pagination crate, that is especially suited for databases, slices and collections. Paginate calculates the range of pages indexes, making it ideal for accessing slices, chunking data and querying databases.
+A framework agnostic pagination crate, that is especially suited for databases, slices and collections. Paginate calculates the range of page indexes, making it ideal for accessing slices, chunking data and querying databases.
 
 
 ## Project Status
