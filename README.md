@@ -9,6 +9,12 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 [![book](https://img.shields.io/badge/Book-Latest-blue)](https://daniel-samson.github.io/paginate-docs/)
 
+## Installation
+Add the following line to your Cargo.toml file:
+
+```toml
+paginate = "^1"
+```
 
 ## Examples
 
