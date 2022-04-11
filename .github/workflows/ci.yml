@@ -11,6 +11,16 @@ on:
       - 'fix/**'
       - 'hotfix/**'
       - 'renovate/**'
+  pull_request:
+    branches:
+      - 'main'
+      - 'patch/**'
+      - 'minor/**'
+      - 'major/**'
+      - 'feature/**'
+      - 'fix/**'
+      - 'hotfix/**'
+      - 'renovate/**'
 
 jobs:
   build:
