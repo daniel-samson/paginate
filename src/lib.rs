@@ -408,7 +408,7 @@ mod tests {
         let total_items = 1usize;
         let items_per_page = 1usize;
         let pages = Pages::new(total_items, items_per_page);
-        for p in pages.into_iter() {
+        for p in pages {
             assert_eq!(
                 p,
                 Page {
