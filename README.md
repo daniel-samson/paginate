@@ -8,6 +8,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 [![Docs](https://docs.rs/paginate/badge.svg?version=latest)](https://docs.rs/paginate/)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 [![book](https://img.shields.io/badge/Book-Latest-blue)](https://daniel-samson.github.io/paginate-docs/)
+[![GitHub stars](https://img.shields.io/github/stars/daniel-samson/paginate)](https://github.com/daniel-samson/paginate/stargazers)
 
 ## Installation
 Add the following line to your Cargo.toml file:
