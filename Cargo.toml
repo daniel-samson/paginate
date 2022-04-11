@@ -9,8 +9,8 @@ readme = "README.md"
 documentation = "https://docs.rs/paginate"
 homepage = "https://daniel-samson.github.io/paginate-docs/"
 license = "Apache-2.0"
-keywords = ["paginate", "chunk", "page", "collection", "database"]
-categories = ["data-structures", "web-programming"]
+keywords = ["paginate", "chunk", "page", "collection", "database", "pagination", "web", "webpage"]
+categories = ["data-structures", "algorithms", "web-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [badges]
