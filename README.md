@@ -59,7 +59,7 @@ fn main() {
 
 ## Contribute
 
-- Star this project. It really helps
+- Star this project. It really helps!
 - [Ask a question](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=question&template=question.md&title=Question%3A+)
 - [Report a bug](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=bug&template=bug_report.md&title=Bug+Report%3A+)
 - [Request documentation](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=documentation&template=documentation.md&title=Needs+Documentation%3A+)
