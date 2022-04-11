@@ -8,7 +8,8 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 [![Docs](https://docs.rs/paginate/badge.svg?version=latest)](https://docs.rs/paginate/)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 [![book](https://img.shields.io/badge/Book-Latest-blue)](https://daniel-samson.github.io/paginate-docs/)
-[![GitHub stars](https://img.shields.io/github/stars/daniel-samson/paginate)](https://github.com/daniel-samson/paginate/stargazers)
+[![stars - paginate](https://img.shields.io/github/stars/daniel-samson/paginate?style=social)](https://github.com/daniel-samson/paginate)
+[![forks - paginate](https://img.shields.io/github/forks/daniel-samson/paginate?style=social)](https://github.com/daniel-samson/paginate)
 
 ## Installation
 Add the following line to your Cargo.toml file:
@@ -58,6 +59,7 @@ fn main() {
 
 ## Contribute
 
+- Star this project. It really helps
 - [Ask a question](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=question&template=question.md&title=Question%3A+)
 - [Report a bug](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=bug&template=bug_report.md&title=Bug+Report%3A+)
 - [Request documentation](https://github.com/daniel-samson/paginate/issues/new?assignees=&labels=documentation&template=documentation.md&title=Needs+Documentation%3A+)
