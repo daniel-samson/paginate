@@ -5,7 +5,7 @@ A framework agnostic pagination crate, that is especially suited for databases, 
 
 [![crates.io](https://img.shields.io/crates/v/paginate.svg)](https://crates.io/crates/paginate)
 [![CI](https://github.com/daniel-samson/paginate/actions/workflows/ci.yml/badge.svg)](https://github.com/daniel-samson/paginate/actions/workflows/ci.yml)
-[![Docs](https://docs.rs/paginate/badge.svg?version=latest)](https://docs.rs/paginate/)
+[![CodeFactor](https://www.codefactor.io/repository/github/daniel-samson/paginate/badge)](https://www.codefactor.io/repository/github/daniel-samson/paginate)
 [![codecov](https://codecov.io/gh/daniel-samson/paginate/branch/master/graph/badge.svg)](https://codecov.io/gh/daniel-samson/paginate)
 [![book](https://img.shields.io/badge/Book-Latest-blue)](https://daniel-samson.github.io/paginate-docs/)
 [![stars - paginate](https://img.shields.io/github/stars/daniel-samson/paginate?style=social)](https://github.com/daniel-samson/paginate)
