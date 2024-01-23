@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build
       run: cargo build --release --verbose
     - name: rust-clippy-check
@@ -29,7 +29,7 @@ jobs:
       options: --security-opt seccomp=unconfined
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Generate code coverage
         run: |
@@ -46,26 +46,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions-rs/toolchain@v1
-      with:
-          toolchain: stable
-          override: true
-    - uses: actions/cache@v2
-      with:
-        path: |
-          ~/.cargo/bin/
-          ~/.cargo/registry/index/
-          ~/.cargo/registry/cache/
-          ~/.cargo/git/db/
-          target/
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - name: install cargo release
-      run: if [ ! -f ~/.cargo/bin/cargo-release ]; then cargo install cargo-release; fi;
-    - name: cargo release
-      run: |
-         git config --global user.name 'Git Hub Actions (rust)'
-         git config --global user.email '12231216+github-actions@users.noreply.github.com '
-         cargo release patch --execute --no-confirm --token $CARGO_REGISTRY_TOKEN
-      env:
-       CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+      - uses: actions/checkout@v3
+      - uses: chainguard-dev/actions/setup-gitsign@main
+      - name: Install cargo-release
+        uses: taiki-e/install-action@v1
+        with:
+          tool: cargo-release
+
+      - uses: cargo-bins/release-pr@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ inputs.version }}
